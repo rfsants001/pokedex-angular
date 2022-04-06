@@ -2,74 +2,81 @@
 
 
 /*Estilizar apenas este component*/
-:host {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+:host{
+  .list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
 
-    justify-content: space-around;
+      justify-content: space-around;
 
-    gap: rem-calc(10);
+      gap: rem-calc(10);
 
-    width: 100%;
+      width: 100%;
 
-    .pokemon{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .pokemon{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
-        gap: rem-calc(10);
+          gap: rem-calc(10);
 
-        background: var(--white);
+          background: var(--white);
 
-        padding: rem-calc(20);
+          padding: rem-calc(20);
 
-        border-radius: rem-calc(10);
+          border-radius: rem-calc(10);
 
-        h2 {
-            font-size: rem-calc(22);
-            font-weight: 700;
+          text-decoration: none;
+          color: var(--primary-color);
 
-            margin-bottom: rem-calc(10);
-        }
-        
-        &__image {
-            background-image: url(../../../assets/bg-list-pokemons-bubble.svg);
-            background-position: center;
+          h2 {
+              font-size: rem-calc(22);
+              font-weight: 700;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+              margin-bottom: rem-calc(10);
 
-            img {
-                width: 50%;
-            }
-        }
+              text-transform: capitalize;
+          }
+
+          &__image {
+              background-image: url(../../../assets/bg-list-pokemons-bubble.svg);
+              background-position: center;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                  width: 50%;
+              }
+          }
 
 
-        &__status {
-            
-            ul {
-                display: flex;
-                
-                gap: rem-calc(10);
-                
-                li {
-                   background: var(--grey); 
-                   font-size: rem-calc(14);
+          &__status {
 
-                   display: flex;
-                   justify-content: center;
-                   align-items: center;
+              ul {
+                  display: flex;
 
-                   padding: rem-calc(5);
-                   border-radius: rem-calc(100);
+                  gap: rem-calc(10);
 
-                   width: rem-calc(60);
+                  li {
+                     background: var(--grey);
+                     font-size: rem-calc(14);
 
-                   margin: rem-calc(10) 0;
-                }
-            }
-        }
+                     display: flex;
+                     justify-content: center;
+                     align-items: center;
 
-    }
+                     padding: rem-calc(5);
+                     border-radius: rem-calc(100);
+
+                     width: rem-calc(60);
+
+                     margin: rem-calc(10) 0;
+                  }
+              }
+          }
+
+      }
+  }
 }

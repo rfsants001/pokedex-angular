@@ -1,1 +1,35 @@
-<p>details works!</p>
+<app-poke-header></app-poke-header>
+
+<main>
+  <ng-template [ngIf]="isLoading">
+    <section class="pokemon__names">
+      <h1 class="slideInRight">{{pokemonStatus[0].name}}</h1>
+      <h2 class="slideInLeft">{{pokemonStatus[1].names[0].name}}</h2>
+    </section>
+
+    <section class="pokemon__status">
+      <img class="slideInDown" [src]="pokemonStatus[0].sprites.other.dream_world.front_default" [alt]="pokemonStatus[0].name">
+
+      <article class="pokemon__status__statistics fadeInUp">
+        <section>
+          <h3>Statistics</h3>
+
+          <ol>
+            <li *ngFor="let value of pokemonStatus[0].stats">
+              {{value.stat.name}}
+
+              <strong>
+                {{value.base_stat}}
+              </strong>
+            </li>
+          </ol>
+        </section>
+
+        <a [routerLink]="['']" class="btn btn__secondary">
+          Go back
+        </a>
+      </article>
+    </section>
+</ng-template>
+
+</main>
