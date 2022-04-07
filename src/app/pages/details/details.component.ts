@@ -5,6 +5,10 @@ import { forkJoin } from 'rxjs';
 //Services
 import {PokeApiService} from '../../service/poke-api.service';
 
+//Interfaces
+import {PokeStatus} from './pokeInterfaceStatus';
+import {PokeEvolutions} from './pokeInterfaceEvolutions';
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -15,8 +19,8 @@ export class DetailsComponent implements OnInit {
   private urlPokemon: string = 'https://pokeapi.co/api/v2/pokemon';
   private urlName: string = 'https://pokeapi.co/api/v2/pokemon-species';
 
-  public pokemonStatus: any;
-  public pokemonEvolutions: any;
+  public pokemonStatus: PokeStatus[] = [];
+  public pokemonEvolutions: PokeStatus[] = [];
 
   public isLoading: boolean = false;
 
@@ -39,7 +43,7 @@ export class DetailsComponent implements OnInit {
     return forkJoin([pokemon, name]).subscribe(
       res => {
         this.pokemonStatus = res;
-        console.log(this.pokemonStatus);
+        console.log(this.pokemonStatus[0].name);
 
         this.pokeApiService.apiGetPokemons(res[1].evolution_chain.url).subscribe(
           res => {

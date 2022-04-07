@@ -3,8 +3,8 @@
 <main>
   <ng-template [ngIf]="isLoading">
     <section class="pokemon__names">
-      <h1 class="slideInRight">{{pokemonStatus[0].name}}</h1>
-      <h2 class="slideInLeft">{{pokemonStatus[1].names[0].name}}</h2>
+      <h1 class="slideInRight">{{pokemonStatus[0].name.toString()}}</h1>
+      <h2 class="slideInLeft">{{pokemonStatus[1].names[0].name.toString()}}</h2>
     </section>
 
     <section class="pokemon__status">
